@@ -22,8 +22,8 @@ def data():
 
 @app.route("/data2")
 def data2():
-    # return jsonify(data_getter.get_data())
-    return jsonify(results=data_getter.get_data())
+    return jsonify(data_getter.get_data2())
+    # return jsonify(results=data_getter.get_data2())
     # return data_getter.get_data()
 
 @app.route("/data3")

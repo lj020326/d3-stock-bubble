@@ -29,6 +29,27 @@ def get_data():
 
     return RESULTS
 
+def get_data2():
+    r = requests.get(URL)
+    data = r.text
+    RESULTS = {'children': []}
+    for line in csv.DictReader(data.splitlines(), skipinitialspace=True):
+        # if float(line['Nasdaq100_points']) > .5:
+            matched = int(float(line['pctchange'])*1000*float(line['Nasdaq100_points']))
+            mismatched = 10000*float(line['Nasdaq100_points']) - matched
+            RESULTS['children'].append({
+                'name': line['Name'],
+                'symbol': line['Symbol'],
+                'symbol': line['Symbol'],
+                'price': line['lastsale'],
+                'net_change': line['netchange'],
+                'percent_change': line['pctchange'],
+                'volume': line['share_volume'],
+                'value': line['Nasdaq100_points'],
+                'matched_data': [matched, mismatched]
+            })
+    return RESULTS
+
 def get_data3():
     r = requests.get(URL)
     data = r.text

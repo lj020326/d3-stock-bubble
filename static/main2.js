@@ -379,8 +379,7 @@ fdata3={
 $(function() {
     console.log('jquery is working!');
 
-    d3.json("/data3",function(error,data) {createGraph(data.children);});
-    //d3.json("/data2",function(error,data) {createGraph(data.results);});
+    d3.json("/data2",function(error,data) {createGraph(data.children);});
     //createGraph(fdata2.results);
     //createGraph(fdata3.children);
 });

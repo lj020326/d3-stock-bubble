@@ -3,7 +3,7 @@ import requests
 
 URL = "http://www.nasdaq.com/quotes/nasdaq-100-stocks.aspx?render=download"
 
-def get_data_orig():
+def get_data():
     r = requests.get(URL)
     data = r.text
     RESULTS = {'children': []}
@@ -20,7 +20,7 @@ def get_data_orig():
         })
     return RESULTS
 
-def get_data():
+def get_data_new():
     r = requests.get(URL)
     data = r.text
     RESULTS = {'children': []}

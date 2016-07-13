@@ -273,10 +273,11 @@ fdata3={
 $(function() {
     console.log('jquery is working!');
 
+    d3.json("/data",function(error,data) {createGraph(data.children);});
     //d3.json("/data3",function(error,data) {createGraph(data.children);});
     //d3.json("/data2",function(error,data) {createGraph(data.results);});
     //createGraph(fdata2.results);
-    createGraph(fdata3.children);
+    //createGraph(fdata3.children);
 });
 
 
@@ -326,13 +327,16 @@ function createGraph(quotes) {
       .attr('class', 'node')
       .attr('transform', function(d) { return 'translate(' + d.x + ',' + d.y + ')'});
 
-    var arcGs = svg.selectAll("g.arc")
-        .data(function(d) {
-          return pie(d.value).map(function(m) { m.r = d.r; return m; });
-        });
+    //var arcGs = svg.selectAll("g.arc")
+    //    .data(function(d) {
+    //        console.log("g.arc");
+    //        console.log(d);
+    //        //return pie(d.value).map(function(m) { m.r = d.r; return m; });
+    //        return pie(d.length).map(function(m) { m.r = d.r; return m; });
+    //    });
 
 
-      node.append("circle")
+    node.append("circle")
         .attr("r", function(d) { return d.r; })
         .style('fill', function(d) { return color(d.symbol); })
 
@@ -345,10 +349,10 @@ function createGraph(quotes) {
         })
         .on("mouseout", function(){return tooltip.style("visibility", "hidden");});
 
-        node.append('text')
-          .attr("dy", ".3em")
-          .style('text-anchor', 'middle')
-          .text(function(d) { return d.symbol; });
+    node.append('text')
+        .attr("dy", ".3em")
+        .style('text-anchor', 'middle')
+        .text(function(d) { return d.symbol; });
 
 }
 
