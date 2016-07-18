@@ -16,6 +16,17 @@ def index():
 def index2():
     return render_template("index2.html")
 
+
+@app.route("/circlepack")
+def circlepack():
+    return render_template("circlepack/index.html")
+
+@app.route("/circlepack2")
+def circlepack2():
+    return render_template("circlepack/index2.html")
+
+
+
 @app.route("/data")
 def data():
     return jsonify(get_data())
@@ -31,6 +42,7 @@ def data3():
     # return jsonify(data_getter.get_data())
     return jsonify(data_getter.get_data3())
     # return data_getter.get_data()
+
 
 
 if __name__ == "__main__":

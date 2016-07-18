@@ -379,9 +379,9 @@ fdata3={
 $(function() {
     console.log('jquery is working!');
 
-    d3.json("/data2",function(error,data) {createGraph(data.children);});
+    //d3.json("/data3",function(error,data) {createGraph(data.children);});
     //createGraph(fdata2.results);
-    //createGraph(fdata3.children);
+    createGraph(fdata3.children);
 });
 
 
@@ -389,10 +389,10 @@ function createGraph(data) {
     var width = 960; // chart width
     var height = 700; // chart height
     var format = d3.format(",d");  // convert value to integer
-    //var color = d3.scale.category20();  // create ordinal scale with 20 colors
+    var color = d3.scale.category20();  // create ordinal scale with 20 colors
     //var sizeOfRadius = d3.scale.pow().domain([-1,1]).range([-50,50]);  // https://github.com/mbostock/d3/wiki/Quantitative-Scales#pow
 
-    var color = d3.scale.ordinal().range(["#f1eef6","#bdc9e1","#74a9cf","#0570b0"]);
+    //var color = d3.scale.ordinal().range(["#f1eef6","#bdc9e1","#74a9cf","#0570b0"]);
     var diameter = 500;
 
     var bubble = d3.layout.pack()
@@ -443,7 +443,8 @@ function createGraph(data) {
           arc.innerRadius(d.r/2);
           return arc(d);
         })
-        .style("fill", function(d, i) { return color(i); });
+        .style("fill", function(d, i) { return color(d.data); });
+        //.style("fill", function(d, i) { return color(i); });
         //.style("fill", function(d, i) { return color(d.symbol); });
 
     arcEnter.append("text")

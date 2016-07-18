@@ -273,11 +273,11 @@ fdata3={
 $(function() {
     console.log('jquery is working!');
 
-    d3.json("/data",function(error,data) {createGraph(data.children);});
+    //d3.json("/data3",function(error,data) {createGraph(data.children);});
     //d3.json("/data3",function(error,data) {createGraph(data.children);});
     //d3.json("/data2",function(error,data) {createGraph(data.results);});
     //createGraph(fdata2.results);
-    //createGraph(fdata3.children);
+    createGraph(fdata3.children);
 });
 
 
