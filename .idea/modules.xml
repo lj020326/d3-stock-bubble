@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/../flask-stock-visualizer/.idea/flask-stock-visualizer.iml" filepath="$PROJECT_DIR$/../flask-stock-visualizer/.idea/flask-stock-visualizer.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/flask-stock-viz.iml" filepath="$PROJECT_DIR$/.idea/flask-stock-viz.iml" />
     </modules>
   </component>

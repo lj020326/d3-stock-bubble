@@ -8,23 +8,36 @@ import data_getter
 app = Flask(__name__)
 
 
+@app.route("/circle/<graph_id>")
+def make_circlemap(graph_id):
+    template = "circlepack/index%s.html" % graph_id
+    return render_template(template)
+
+@app.route("/treemap/<graph_id>")
+def make_treemap(graph_id):
+    template = "treemap/index%s.html" % graph_id
+    return render_template(template)
+
+@app.route("/tree/<graph_id>")
+def make_tree(graph_id):
+    template = "tree/index%s.html" % graph_id
+    return render_template(template)
+
 @app.route("/")
 def index():
     return render_template("index.html")
 
-@app.route("/2")
-def index2():
-    return render_template("index2.html")
+# @app.route("/2")
+# def index2():
+#     return render_template("index2.html")
 
-
-@app.route("/circlepack")
-def circlepack():
-    return render_template("circlepack/index.html")
-
-@app.route("/circlepack2")
-def circlepack2():
-    return render_template("circlepack/index2.html")
-
+# @app.route("/circlepack")
+# def circlepack():
+#     return render_template("circlepack/index.html")
+#
+# @app.route("/circlepack2")
+# def circlepack2():
+#     return render_template("circlepack/index2.html")
 
 
 @app.route("/data")
