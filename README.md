@@ -12,6 +12,18 @@ This file contains a Flask boilerplate. Once downloaded, extract the file and fo
 
 Then test to make sure it works: Fire up the server, open your browser, and navigate to http://localhost:5000/. You should see “Hello, world!” staring back at you.
 
+Go to graphs:
+
+    http://127.0.0.1:5000/circle/1
+    http://127.0.0.1:5000/circle/2
+    ...
+    http://127.0.0.1:5000/treemap/1
+    http://127.0.0.1:5000/treemap/2
+    ...
+    http://127.0.0.1:5000/tree/1
+    http://127.0.0.1:5000/tree/2
+
+
 ## Visualizing
 Along with HTML and CSS, we’ll be using Bootstrap, Javascript/jQuery, and D3 to power our front-end. 
 We’ll also use the client-side dependency management tool Bower to download and manage these libraries.
