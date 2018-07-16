@@ -9,6 +9,7 @@ This file contains a Flask boilerplate. Once downloaded, extract the file and fo
 
 > $ pip install -r requirements.txt
 
+
 Then test to make sure it works: Fire up the server, open your browser, and navigate to http://localhost:5000/. You should see “Hello, world!” staring back at you.
 
 ## Visualizing
